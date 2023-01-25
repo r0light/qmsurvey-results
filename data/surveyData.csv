@@ -1,0 +1,12 @@
+"participant";"factorKey";"answerTime";"confidentiality";"integrity";"nonrepudiation";"accountability";"authenticity";"modularity";"reusability";"analyzability";"modifiability";"testability";"simplicity";"timeBehaviour";"resourceUtilization";"capability";"elasticity";"adaptability";"installability";"replaceability";"availability";"faultTolerance";"recoverability";"maturity";"coExistence";"interoperability"
+"e032e36163484afe8e102753b2830c8d";"automatedInfrastructure";0;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;2;0;0;0;2;0;0;0
+"e032e36163484afe8e102753b2830c8d";"healthAndReadinessChecks";206;0;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;2;0;2;0;0;0
+"70132c983c56970e94d071b3558a627f";"api-BasedCommunication";0;0;0;0;0;0;2;2;0;0;0;0;-1;0;0;0;1;0;2;0;0;0;0;0;1
+"70132c983c56970e94d071b3558a627f";"infrastructureAbstraction";37;0;0;0;0;0;0;0;1;1;0;1;0;0;0;0;2;0;2;0;0;0;0;0;0
+"70132c983c56970e94d071b3558a627f";"mediatedCommunication";44;0;0;0;0;0;0;1;0;0;1;0;-1;0;0;0;1;0;2;-1;-1;0;0;0;0
+"70132c983c56970e94d071b3558a627f";"circuitBreakedCommunication";30;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;0
+"70132c983c56970e94d071b3558a627f";"serviceReplication";19;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;0;0;0
+"70132c983c56970e94d071b3558a627f";"physicalDataDistribution";21;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;0;0;0
+"70132c983c56970e94d071b3558a627f";"contract-BasedLinks";18;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0
+"8531bea99af7526ae0046ac94163c9dc";"shardedDataStoreReplication";0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+"680c30986e6799dbdfcd40192afc9ee5";"api-BasedCommunication";0;0;0;0;1;0;2;0;0;1;1;-1;-1;0;0;0;0;0;0;0;0;0;0;0;0
