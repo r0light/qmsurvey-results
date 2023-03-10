@@ -1,8 +1,35 @@
-"participant";"jobArea";"jobTitle";"companySector";"generalExperience";"cloudExperience"
-"e032e36163484afe8e102753b2830c8d";"industry";"Manager";"Information and communication";30;1
-"70132c983c56970e94d071b3558a627f";"academia";"Manager";"";0;0
-"680c30986e6799dbdfcd40192afc9ee5";"academia";"Prof.";"";30;10
-"f88637280c2466274ed3ab4b1109aa46";"academia";"";"";15;5
-"38c12aa2c2a52abe04fe3642e30d2bd5";"academia";"";"";5;3
-"cc1d09747730fd5a51acbf2a625ece2d";"industry";"Software Architect";"Information and communication";13;5
-"254c6f4efd9493ee0ca4dde69d20d3c8";"industry";"Software Developer";"Information and communication";4;1
+"jobArea";"jobTitle";"companySector";"generalExperience";"cloudExperience"
+"industry";"Manager";"Information and communication";30;1
+"academia";"Manager";"";0;0
+"academia";"Prof.";"";30;10
+"academia";"";"";15;5
+"academia";"";"";5;3
+"industry";"Software Architect";"Information and communication";13;5
+"industry";"Software Developer";"Information and communication";4;1
+"student";"";"";10;2
+"industry";"Software Developer";"Information and communication";10;5
+"industry";"Software Developer";"Financial and insurance activities";15;2
+"industry";"Manager";"Information and communication";30;14
+"industry";"Technical Architect";"Information and communication";10;6
+"industry";"Lead Architect";"Transportation and storage";20;5
+"industry";"Consultant";"Other service activities";13;8
+"industry";"Software Architect";"Information and communication";3;4
+"student";"";"";8;3
+"industry";"Software Architect";"Information and communication";15;10
+"industry";"Manager";"Information and communication";22;8
+"industry";"Software Developer";"Information and communication";16;8
+"academia";"";"";10;5
+"industry";"Software Architect";"Financial and insurance activities";15;0
+"academia";"PhD Student";"";6;3
+"academia";"Manager";"";39;20
+"industry";"Software Engineer";"Information and communication";15;10
+"student";"";"";20;3
+"academia";"Senio Researcher";"";14;4
+"industry";"Manager";"Information and communication";10;3
+"academia";"";"";1;1
+"academia";"Software Architect";"";18;11
+"academia";"Consultant";"";9;8
+"student";"";"";2;5
+"academia";"";"";20;7
+"academia";"Manager";"";10;3
+"student";"";"";8;5
