@@ -409,7 +409,6 @@ plotFactorAspectCombination <- function(paramFactorKey, paramAspectKey) {
   
   plot <- ggplot(combination, aes(x=rating)) + 
     geom_bar(stat = "count", fill="steelblue", alpha = 0.9, width=0.5) + 
-    #geom_histogram(stat= "count", binwidth=0.1, breaks = seq(-2, 2, by = 1) ) +
     scale_x_continuous(breaks=c(-2,-1,0,1,2), labels=c("--", "-", "0", "+", "++"), limits = c(-2.5,2.5), minor_breaks=NULL) + 
     scale_y_continuous(limits = function(limits) {return(c(limits[1], ceiling(limits[2])))}, breaks = function(limits) {
       calculatedBreaks <- floor(seq(from=0, to=limits[2], length.out=5))
@@ -418,7 +417,6 @@ plotFactorAspectCombination <- function(paramFactorKey, paramAspectKey) {
     
     theme_ipsum(base_family = "sans") +
     theme(text = element_text(size=12), 
-          #panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
           axis.text.x = element_text(size=12, vjust=0.2), 
           axis.text.y = element_text(size=12, vjust=0.4), 
@@ -574,6 +572,7 @@ Furthermore, especially the factors in Table \@ref(tab:factorsWithInvalidImpacts
 Nevertheless, it can make the quality model simpler and therefore better understandable if impacts that could not be validated are removed.
 
 
+
 ```{r factorsWithValidImpacts, echo = FALSE, message=FALSE}
 
 # filtered by valid impacts
@@ -581,8 +580,8 @@ validatedImpacts <- impactValidation %>% filter(validation == "✓")
 
 factorKeysValidated <- unique(validatedImpacts$factorKey)
 
-withTableStyling(kable((impactValidation %>% filter(factorKey %in% factorKeysValidated))[,columnSelection], 
-      caption = "Factors with successfully validated initially stated impacts",
+withTableStyling(kable((impactValidation %>% filter(factorKey %in% factorKeysValidated) %>% arrange(factorKey))[,columnSelection], 
+      caption = "Factors with a successful validation of initially stated impacts",
       col.names = columnNames,
       longtable = FALSE,
       align = columnAlignment
@@ -597,7 +596,7 @@ potentiallyValidatedImpacts <- impactValidation %>% filter(validation == "(✓)"
 
 factorKeysPotentiallyValidated <- setdiff(unique(potentiallyValidatedImpacts$factorKey),  factorKeysValidated)
 
-withTableStyling(kable((impactValidation %>% filter(factorKey %in% factorKeysPotentiallyValidated))[,columnSelection], 
+withTableStyling(kable((impactValidation %>% filter(factorKey %in% factorKeysPotentiallyValidated) %>% arrange(factorKey))[,columnSelection], 
       caption = "Factors with potentially valid initially stated impacts",
       col.names = columnNames,
       longtable = FALSE,
@@ -608,25 +607,11 @@ withTableStyling(kable((impactValidation %>% filter(factorKey %in% factorKeysPot
 
 ```{r factorsWithInvalidImpacts, echo = FALSE, message=FALSE}
 
-# filter by invalid impacts
-#impactValidation %>% filter(validation == "✗" | validation == "(✗)") %>% arrange(desc(validation))
-
 # remaining factors with invalid or unclear results
 factorKeysRemaining <- setdiff(unique(impactValidation$factorKey), union(factorKeysValidated, factorKeysPotentiallyValidated))
 
-
-withTableStyling(kable((impactValidation %>% filter(factorKey %in% factorKeysRemaining))[,columnSelection], 
+withTableStyling(kable((impactValidation %>% filter(factorKey %in% factorKeysRemaining) %>% arrange(factorKey))[,columnSelection], 
       caption = "Factors with (potentially) invalid and unclear initially stated impacts",
-      col.names = columnNames,
-      longtable = FALSE,
-      align = columnAlignment
-      ))
-```
-
-
-```{r inverseImpacts, include=FALSE,  echo = FALSE, message=FALSE}
-withTableStyling(kable((impactValidation %>% filter(validation == "⇄" | validation == "(⇄)"))[,columnSelection], 
-      caption = "Initially stated impacts which are (potentially) inverse",
       col.names = columnNames,
       longtable = FALSE,
       align = columnAlignment
@@ -701,13 +686,6 @@ newImpactsFiltered <- newImpactsFiltered %>%
 newImpactsFiltered$factorName <- sapply(newImpactsFiltered$factorKey, function(key) values(factorInformation, keys=key)[1])
 newImpactsFiltered$aspectName <- sapply(newImpactsFiltered$aspectKey, function(key) values(aspectInformation, keys=key)[1])
 newImpactsFiltered$highLevelAspectName <- sapply(newImpactsFiltered$aspectKey, function(key) values(aspectInformation, keys=key)[4])
-
-
-interesting <- newImpacts %>% filter(derivedImpact == "0" | derivedImpact == "(0)")
-#interesting$factorName <- sapply(interesting$factorKey, function(key) values(factorInformation, keys=key)[1])
-#interesting$aspectName <- sapply(interesting$aspectKey, function(key) values(aspectInformation, keys=key)[1])
-#interesting$highLevelAspectName <- sapply(interesting$aspectKey, function(key) values(aspectInformation, keys=key)[4])
-
 
 columnSelection <- c("factorName", "aspectName", "highLevelAspectName", "--", "-", "0", "+", "++", "derivedImpact", "pValue")
 columnNames <- c("Factor", "Quality Aspect", "High-level Aspect", "- -", "-", "0", "+", "++", "Impact", "p-Value")
